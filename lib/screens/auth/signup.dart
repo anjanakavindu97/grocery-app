@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/components/custom_button.dart';
 import 'package:grocery_app/components/custome_text.dart';
 import 'package:grocery_app/components/custome_textfield.dart';
+import 'package:grocery_app/screens/auth/login.dart';
+import 'package:grocery_app/screens/home/home_screen.dart';
 import 'package:grocery_app/util/assets_constant.dart';
+import 'package:grocery_app/util/util_functions.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -51,7 +54,7 @@ class _SignUpState extends State<SignUp> {
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {
-                    //redirect page to forgot password
+                    UtilFunctions.navigateTo(context, const Login());
                   },
                   child: const CustomText(
                     "Already have an account?",
@@ -63,7 +66,9 @@ class _SignUpState extends State<SignUp> {
               ),
               const SizedBox(height: 30),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  UtilFunctions.navigateTo(context, const HomeScreen());
+                },
                 text: "Signup",
               ),
             ],

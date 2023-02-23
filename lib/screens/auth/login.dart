@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/components/custome_text.dart';
 import 'package:grocery_app/components/social_button.dart';
+import 'package:grocery_app/screens/auth/fogot_password.dart';
+import 'package:grocery_app/screens/home/home_screen.dart';
 import 'package:grocery_app/util/assets_constant.dart';
+import 'package:grocery_app/util/util_functions.dart';
 import '../../components/custom_button.dart';
 import '../../components/custome_textfield.dart';
 
@@ -44,13 +47,15 @@ class _LoginState extends State<Login> {
                 CustomTextField(controller: _email, hintText: 'Email'),
                 const SizedBox(height: 10),
                 CustomTextField(
-                    controller: _password, hintText: 'Password', isObscure: true),
+                    controller: _password,
+                    hintText: 'Password',
+                    isObscure: true),
                 const SizedBox(height: 16),
                 Align(
                   alignment: Alignment.centerRight,
                   child: InkWell(
                     onTap: () {
-                      //redirect page to forgot password
+                      UtilFunctions.navigateTo(context, const FogotPassword());
                     },
                     child: const CustomText(
                       "Forgot your password?",
@@ -62,7 +67,9 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 30),
                 CustomButton(
-                  onTap: () {},
+                  onTap: () {
+                    UtilFunctions.navigateTo(context, const HomeScreen());
+                  },
                   text: "Login",
                 ),
                 const SizedBox(height: 22),
