@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/components/custome_text.dart';
 import 'package:grocery_app/screens/auth/login.dart';
+import 'package:grocery_app/screens/auth/signup.dart';
 import 'package:grocery_app/util/assets_constant.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const Login(),
+          builder: (context) => const SignUp(),
         ),
       );
     });
